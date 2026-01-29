@@ -1,0 +1,152 @@
+        body {
+            background-color: black;
+            font-family: Arial, sans-serif;
+            color: white;
+            
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 46px;
+            margin-top: 20px;
+            animation: fadeIn 2s;
+        }
+
+        p.subtitle {
+            text-align: center;
+            font-size: 18px;
+            animation: fadeIn 2.5s;
+        }
+
+        .menu {
+            background-color:#8b0000;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+        }
+
+        .menu a {
+            margin: 15px;
+            font-size: 18px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .menu a:hover {
+            color: rgb(255, 0, 0);
+            transform: scale(1.1);
+        }
+        
+        footer {
+            background-color: #8b0000;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            }
+             /* program page */
+           .image-row {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .image-row img {
+            border-radius: 10px;
+            transition: transform 0.5s, opacity 0.5s;
+        }
+
+        .image-row img:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
+
+        /* Smaller images */
+        .row-3 img {
+            width: 25%;
+        }
+
+        .row-2 img {
+            width: 38%;
+        }
+        .content p,
+        .content ul {
+            font-size: 17px;
+            line-height: 1.6;
+        }
+
+           /* contact */
+
+        
+        .error {
+            color: red;
+            text-align: center;
+            font-size: 16px;
+            margin-top: 8px;
+        }
+/* CONTACT FORM ማስተካከያ */
+          form {
+           display: flex;
+           flex-direction: column;
+           align-items: center;    /* ሁሉንም ሳጥኖች መሃል ያደርጋል */
+           gap: 15px;
+           margin-top: 20px;
+}
+
+        form input, 
+        form textarea, 
+        form button {
+            width: 100%;            /* ለያዙት ቦታ ሙሉ ስፋት */
+            max-width: 450px;       /* ሳጥኑ እንዳይሰፋ የሚገድበው ቁልፍ ቁጥር ይህ ነው */
+            padding: 12px;
+            border-radius: 5px;
+            box-sizing: border-box; /* padding ስፋቱን እንዳይጨምረው ይረዳል */
+}
+
+        h2 {
+           text-align: center;
+           font-size: 28px;
+         margin-top: 30px;     /* "Send Us a Message" የሚለውን መሃል ለማድረግ */
+}
+        
+
+        form button {
+            padding: 12px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            background-color: #8b0000;
+            color: white;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: crimson;
+        }
+
+        .contact-info {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        footer {
+            background-color: #8b0000;
+            text-align: center;
+            padding: 10px;
+            margin-top: 40px;
+        }
+  
