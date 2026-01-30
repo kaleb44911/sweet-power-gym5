@@ -9,7 +9,7 @@ const form = document.getElementById("contactForm");
             const message = document.getElementById("message").value.trim();
 
             const nameRegex = /^[A-Za-z\s]+$/;
-            const gmailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+            const gmailRegex = /^[a-zA-Z0-9._%+-]+@gmail.com$/;
 
             messageBox.textContent = "";
 
