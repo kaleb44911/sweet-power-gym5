@@ -49,12 +49,10 @@
 
         @keyframes fadeIn {
             from {
-                opacity: 0;
-                transform: translateY(-20px);
+                opacity: 0;transform: translateY(-20px);
             }
             to {
-                opacity: 1;
-                transform: translateY(0);
+                opacity: 1; transform: translateY(0);
             }
             }
              /* program page */
@@ -102,7 +100,7 @@
           form {
            display: flex;
            flex-direction: column;
-           align-items: center;    /* ሁሉንም ሳጥኖች መሃል ያደርጋል */
+           align-items: center;   
            gap: 15px;
            margin-top: 20px;
 }
@@ -110,24 +108,23 @@
         form input, 
         form textarea, 
         form button {
-            width: 100%;            /* ለያዙት ቦታ ሙሉ ስፋት */
-            max-width: 450px;       /* ሳጥኑ እንዳይሰፋ የሚገድበው ቁልፍ ቁጥር ይህ ነው */
+            width: 100%;            
+            max-width: 450px;       
             padding: 12px;
             border-radius: 5px;
-            box-sizing: border-box; /* padding ስፋቱን እንዳይጨምረው ይረዳል */
+            box-sizing: border-box; 
 }
 
         h2 {
            text-align: center;
            font-size: 28px;
-         margin-top: 30px;     /* "Send Us a Message" የሚለውን መሃል ለማድረግ */
+         margin-top: 30px;     /* "Send Us a Message" */
 }
         
 
         form button {
             padding: 12px;
             font-size: 18px;
-            border: none;
             border-radius: 5px;
             background-color: #8b0000;
             color: white;
