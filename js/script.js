@@ -1,29 +1,49 @@
 const form = document.getElementById("contactForm");
-        const messageBox = document.getElementById("formMessage");
+const messageBox = document.getElementById("formMessage");
 
-        form.addEventListener("submit", function (e) {
-            e.preventDefault();
+// 1. IMPROVEMENT: Pre-fill the name if it exists in LocalStorage
+window.addEventListener("DOMContentLoaded", () => {
+    const savedName = localStorage.getItem("lastSubmitterName");
+    if (savedName) {
+        document.getElementById("name").value = savedName;
+        console.log("Welcome back, " + savedName);
+    }
+});
 
-            const name = document.getElementById("name").value.trim();
-            const email = document.getElementById("email").value.trim();
-            const message = document.getElementById("message").value.trim();
+form.addEventListener("submit", function (e) {
+    e.preventDefault();
 
-            const nameRegex = /^[A-Za-z\s]+$/;
-            const gmailRegex = /^[a-zA-Z0-9._%+-]+@gmail.com$/;
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
 
-            messageBox.textContent = "";
+    const nameRegex = /^[A-Za-z\s]+$/;
+    const gmailRegex = /^[a-zA-Z0-9._%+-]+@gmail.com$/;
 
-            if (name === "" || email === "" || message === "") {
-                messageBox.textContent = "❌ Please fill in all fields.";
-            }
-            else if (!nameRegex.test(name)) {
-                messageBox.textContent = "❌ Name must contain only letters.";
-            }
-            else if (!gmailRegex.test(email)) {
-                messageBox.textContent = "❌ Email must be a valid @gmail.com address.";
-            }
-            else {
-                alert("✅ Message sent successfully!");
-                form.reset();
-            }
-        });
+    messageBox.textContent = "";
+    
+     if (!gmailRegex.test(email)) {
+        messageBox.textContent = "❌ Email must be a valid @gmail.com address.";
+    }
+    else {
+        // --- LOCAL STORAGE LOGIC START ---
+        
+        const newMessage = {
+            sender: name,
+            email: email,
+            text: message,
+            date: new Date().toLocaleString()
+        };
+
+        const existingMessages = JSON.parse(localStorage.getItem("contactMessages")) || [];
+        
+        existingMessages.push(newMessage);
+        
+        localStorage.setItem("contactMessages", JSON.stringify(existingMessages));
+    
+        localStorage.setItem("lastSubmitterName", name);
+
+        alert("✅ Message sent successfully and saved to LocalStorage!");
+        form.reset();
+    }
+});
+
